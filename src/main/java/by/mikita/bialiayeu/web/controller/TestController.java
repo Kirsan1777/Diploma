@@ -34,4 +34,12 @@ public class TestController {
         return modelAndView;
     }
 
+    @GetMapping("/posted")
+    public ModelAndView postRequested(@RequestParam("idCourse") int idCourse){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("home2");
+        modelAndView.addObject("test", bookService.findCourseById(idCourse));
+        return modelAndView;
+    }
+
 }
