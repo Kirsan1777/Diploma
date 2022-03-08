@@ -18,9 +18,9 @@ This is page Home 2 <br><br>
 
 ${test.getNameCourse()}
 
-<form th:method="POST" th:action="@{/user/post}">
-        UserName : <input type="number" name="idCourse"/> <br><br>
-        <input type="submit" name="submit">
+<form method="GET" action="/user/post">
+    <input type="number" name="idCourse">
+    <input type="submit" value="View"/>
 </form>
 
 
