@@ -15,6 +15,6 @@ public class UserInfo {
     @Column(name = "date_registration")
     private String dateRegistration;
     private String email;
-    @Column(name = "name_picture")
-    private String picture;
+    @Column(name = "phone_number")
+    private String phoneNumber;
 }

@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib prefix="th" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: Asus
@@ -22,6 +23,19 @@ ${test.getNameCourse()}
     <input type="submit" value="View"/>
 </form>
 
+<form method="POST" action="/user/addUser" >
+    <label>Login</label>
+    <input type="name" name="login">
+    <label>Id</label>
+    <input type="number" name="id">
+    <input type="submit" value="Add"/>
+</form>
+
+<img src="D:/Work/picture/19002.jpg" width="80" height="120"/>
+
+<img src="static/picture/temp.jpg" width="80" height="120"/>
+
+<img src="images/temp.jpg" alt="No  image" width="120" height="120"/>
 
 </body>
 </html>

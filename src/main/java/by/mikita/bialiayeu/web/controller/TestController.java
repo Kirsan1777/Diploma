@@ -1,6 +1,8 @@
 package by.mikita.bialiayeu.web.controller;
 
+import by.mikita.bialiayeu.server.model.User;
 import by.mikita.bialiayeu.server.service.impl.CourseServiceImpl;
+import by.mikita.bialiayeu.server.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.*;
@@ -12,10 +14,12 @@ import org.springframework.web.servlet.ModelAndView;
 public class TestController {
 
     private CourseServiceImpl bookService;
+    private UserServiceImpl userService;
 
     @Autowired
-    public TestController(CourseServiceImpl bookService){
+    public TestController(CourseServiceImpl bookService, UserServiceImpl userService){
         this.bookService = bookService;
+        this.userService = userService;
     }
 
     @GetMapping("/home")
@@ -39,6 +43,18 @@ public class TestController {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("home2");
         modelAndView.addObject("test", bookService.findCourseById(idCourse));
+        return modelAndView;
+    }
+
+    @PostMapping("/addUser")
+    public ModelAndView addUser(@RequestParam("id") int idUser, @RequestParam("login") String login){
+        ModelAndView modelAndView = new ModelAndView();
+        User user = new User();
+        user.setIdUser(idUser);
+        user.setLogin(login);
+        user.setPassword(login);
+        userService.addUser(user);
+        modelAndView.setViewName("test");
         return modelAndView;
     }
 
