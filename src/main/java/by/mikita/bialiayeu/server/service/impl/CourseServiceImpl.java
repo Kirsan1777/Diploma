@@ -3,7 +3,6 @@ package by.mikita.bialiayeu.server.service.impl;
 
 import by.mikita.bialiayeu.server.dao.CourseDAO;
 import by.mikita.bialiayeu.server.model.Course;
-import by.mikita.bialiayeu.server.model.UserInfo;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

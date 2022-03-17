@@ -2,7 +2,7 @@ package by.mikita.bialiayeu.server.service;
 
 
 import by.mikita.bialiayeu.server.model.User;
-import by.mikita.bialiayeu.server.model.UserInfo;
+import by.mikita.bialiayeu.server.model.Claim;
 import org.springframework.data.domain.Page;
 
 public interface UserService {
@@ -11,17 +11,17 @@ public interface UserService {
 
     void deleteUser(int idUser);
 
-    Page<UserInfo> getAllUserInfo();
+    Page<Claim> getAllUserInfo();
 
     void updateUserInfo(User user);
 
     User findUserById(int idUser);
 
-    UserInfo findUserInfoById(int idUser);
+    Claim findUserInfoById(int idUser);
 
     User findUserByLogin(String login);
 
-    UserInfo findAllUserByName(String username);
+    Claim findAllUserByName(String username);
 
 
 

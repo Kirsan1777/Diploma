@@ -22,5 +22,4 @@ public class User {
     private String password;
     @Column(name = "role")
     private String role;
-    private String status;
 }

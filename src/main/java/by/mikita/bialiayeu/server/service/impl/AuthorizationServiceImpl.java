@@ -19,8 +19,6 @@ public class AuthorizationServiceImpl implements AuthorizationService {
         this.userService = userService;
     }
 
-
-
     @Override
     public User authorization(String login, String password) {
         User user;

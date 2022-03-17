@@ -2,7 +2,7 @@ package by.mikita.bialiayeu.server.service.impl;
 
 
 import by.mikita.bialiayeu.server.dao.UserDAO;
-import by.mikita.bialiayeu.server.dao.UserInfoDAO;
+import by.mikita.bialiayeu.server.dao.ClaimDAO;
 import by.mikita.bialiayeu.server.model.User;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,19 +14,19 @@ import java.util.Optional;
 @Component
 public class UserServiceImpl /*implements UserService*/ {
 
-    private static final String DEFAULT_USER_STATUS = "ACTIVE";
+
     private static final String DEFAULT_USER_ROLE = "USER";
 
     @Autowired
     UserDAO userDAO;
-    UserInfoDAO userInfoDAO;
+    ClaimDAO claimDAO;
     ModelMapper modelMapper;
 
     @Autowired
-    public UserServiceImpl(UserDAO userDAO, UserInfoDAO userInfoDAO, ModelMapper modelMapper){
+    public UserServiceImpl(UserDAO userDAO, ClaimDAO claimDAO, ModelMapper modelMapper){
         this.userDAO = userDAO;
         this.modelMapper = modelMapper;
-        this.userInfoDAO = userInfoDAO;
+        this.claimDAO = claimDAO;
     }
 
     public boolean isExistUser(String login){
@@ -37,7 +37,7 @@ public class UserServiceImpl /*implements UserService*/ {
 
     public void addUser(User user){
         user.setRole(DEFAULT_USER_ROLE);
-        user.setStatus(DEFAULT_USER_STATUS);
+
         userDAO.save(user);
     }
 
@@ -62,7 +62,6 @@ public class UserServiceImpl /*implements UserService*/ {
 
     public  void updateUserStatus(int idUser, String newStatus){
         User user = findUserById(idUser);
-        user.setStatus(newStatus);
         userDAO.save(user);
     }
 }
