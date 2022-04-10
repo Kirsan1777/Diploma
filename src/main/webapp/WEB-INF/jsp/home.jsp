@@ -15,6 +15,7 @@
     <title>Title</title>
 </head>
 <body>
+<jsp:include page="headerOld.jsp"/>
 
 ${test.getNameCourse()}
 
@@ -31,11 +32,11 @@ ${test.getNameCourse()}
     <input type="submit" value="Add"/>
 </form>
 
-<img src="D:/Work/picture/19002.jpg" width="80" height="120"/>
+<img src="http://localhost:8080/images/dark.jpg" alt="No  image" width="120" height="120"/>
 
-<img src="static/picture/temp.jpg" width="80" height="120"/>
+<img src="http://localhost:8080/images/19002.jpg" alt="No  image" width="120" height="120"/>
 
-<img src="images/temp.jpg" alt="No  image" width="120" height="120"/>
+<img src="http://localhost:8080/images/temp.jpg" alt="No  image" width="120" height="120"/>
 
 </body>
 </html>

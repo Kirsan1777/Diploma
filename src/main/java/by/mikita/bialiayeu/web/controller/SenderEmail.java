@@ -21,6 +21,13 @@ public class SenderEmail {
         this.emailSendingService = emailSendingService;
     }
 
+    @GetMapping("/home")
+    public ModelAndView viewMails(){
+        ModelAndView model = new ModelAndView();
+        model.setViewName("sendEmail");
+        return model;
+    }
+
     @GetMapping("/send-basic")
     public ModelAndView sendMessage(){
         ModelAndView model = new ModelAndView();

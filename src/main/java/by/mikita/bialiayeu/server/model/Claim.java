@@ -1,11 +1,15 @@
 package by.mikita.bialiayeu.server.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Data
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "claim")
 public class Claim {
     @Id
@@ -17,4 +21,6 @@ public class Claim {
     private String email;
     @Column(name = "phone_number")
     private String phoneNumber;
+    @Column(name = "id_course")
+    private String idCourse;
 }

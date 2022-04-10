@@ -1,25 +1,64 @@
 package by.mikita.bialiayeu.web.util;
 
-import org.springframework.web.multipart.MultipartFile;
-
+import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.*;
-import java.nio.file.*;
 
 
-public class FileUploadUtil {
-    public static void saveFile(String uploadDir, String fileName,
-                                MultipartFile multipartFile) throws IOException {
-        Path uploadPath = Paths.get(uploadDir);
+@WebServlet(urlPatterns = "/FileUploadingServlet")
+@MultipartConfig(fileSizeThreshold = 1024 * 1024,
+        maxFileSize = 1024 * 1024 * 5,
+        maxRequestSize = 1024 * 1024 * 5 * 5)
+public class FileUploadUtil extends HttpServlet {
 
-        if (!Files.exists(uploadPath)) {
-            Files.createDirectories(uploadPath);
+    private static final String UPLOAD_DIR = "D:\\Work\\picture\\";
+
+    private static final String USER_PAGE = "user";
+
+    /*@Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        String page = request.getParameter(Attribute.PAGE);
+        //System.getProperty("user.home");
+        File fileSaveDir = new File(UPLOAD_DIR);
+        if (!fileSaveDir.exists()) {
+            fileSaveDir.mkdir();
         }
+        StringBuilder fileName = new StringBuilder();
+        request.getParts().forEach(part -> {
+            try {
+                String path = part.getSubmittedFileName();
+                if (path == null) {
+                   // throw new ControllerException();
+                }
+                part.write(UPLOAD_DIR + path);
+                fileName.append(path);
+            } catch (IOException e) {
+                //LOGGER.error("File was not uploaded");
+            }
+        });
+        request.setAttribute(Attribute.PICTURE, fileName.toString());
+        if (page.equals(USER_PAGE)) {
+           // new UpdateUserPictureCommand().execute(request, response);
 
-        try (InputStream inputStream = multipartFile.getInputStream()) {
-            Path filePath = uploadPath.resolve(fileName);
-            Files.copy(inputStream, filePath, StandardCopyOption.REPLACE_EXISTING);
-        } catch (IOException ioe) {
-            throw new IOException("Could not save image file: " + fileName, ioe);
+        } else {
+            if (request.getParameter(Attribute.BOOKS_ID) != null && !request.getParameter(Attribute.BOOKS_ID).equals("")) {
+                request.setAttribute(Attribute.BOOKS_ID, request.getParameter(Attribute.BOOKS_ID));
+            }
+            request.setAttribute(Attribute.PAGE, page);
+            request.setAttribute("type", fileName.toString());
+            new UpdateBookPictureCommand().execute(request, response);
+            //request.getRequestDispatcher(PagePath.BOOK_PAGE_COMMAND).forward(request, response);
         }
+    }*/
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
     }
 }
