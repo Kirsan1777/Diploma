@@ -12,7 +12,7 @@ public class EmailSendingServiceImpl {//WTF 0_0 ????
     private final static String USERNAME = "forwftask@gmail.com";
     private final static String PASSWORD = "wftaskwf";
 
-    public void sendMessage() {
+    public void sendMessage(String messageToUser, String email) {
         try{
             Properties prop = new Properties();
             /*prop.put("mail.smtp.auth", true);
@@ -32,13 +32,13 @@ public class EmailSendingServiceImpl {//WTF 0_0 ????
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress("forWFTask@gmail.com"));
             message.setRecipients(
-                    Message.RecipientType.TO, InternetAddress.parse("forWFTask@gmail.com"));
-            message.setSubject("Mail Subject");
+                    Message.RecipientType.TO, InternetAddress.parse(email));//this is email person
+            message.setSubject("Courses information");
 
             String msg = "This is my first email using JavaMailer";
 
             MimeBodyPart mimeBodyPart = new MimeBodyPart();
-            mimeBodyPart.setContent(msg, "text/html; charset=utf-8");
+            mimeBodyPart.setContent(messageToUser, "text/html; charset=utf-8");
 
             Multipart multipart = new MimeMultipart();
             multipart.addBodyPart(mimeBodyPart);

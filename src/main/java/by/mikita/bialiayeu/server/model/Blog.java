@@ -15,9 +15,13 @@ public class Blog {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    private String name;
     @Column(name = "description")
     private String description;
     @Column(name = "text")
     private String text;
+    private String picture;
+    @Column(name = "date_add")
+    private String dateAdd;
 
 }

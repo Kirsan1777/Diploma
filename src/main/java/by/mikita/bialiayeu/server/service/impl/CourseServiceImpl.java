@@ -5,6 +5,7 @@ import by.mikita.bialiayeu.server.dao.CourseDAO;
 import by.mikita.bialiayeu.server.model.Course;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -24,7 +25,7 @@ public class CourseServiceImpl /* implements BookService */{
     }
 
     public List<Course> findAllCourses(){
-        List<Course> courses = courseDAO.findAll();
+        List<Course> courses = courseDAO.findAll(Sort.by(Sort.Order.desc("id")));
         return courses;
     }
 
@@ -40,6 +41,7 @@ public class CourseServiceImpl /* implements BookService */{
     }
 
     public void addNewCourse(Course course){
+        course.setPhotoReference(setBasicImage(course.getTypeOfCourse()));
         courseDAO.save(course);
     }
 
@@ -64,6 +66,24 @@ public class CourseServiceImpl /* implements BookService */{
         Course course = courseOptional.map( c -> modelMapper.map(c, Course.class)).get();
         course.setPhotoReference(newPhoto);
         courseDAO.save(course);
+    }
+
+    private String setBasicImage(String type){
+        String basicImage = "";
+        switch (type){
+            case "Java": basicImage = "19002.jpg";
+                break;
+            case "JavaScript": basicImage = "somber-cat-.jpg";
+                break;
+            case "QA": basicImage = "uOnpvhQktPw.jpg";
+                break;
+            case "Design": basicImage = "ShayaArcana.jpg";
+                break;
+            case "Android": basicImage = "842165.jpg";
+                break;
+            default: basicImage = "19002.jpg";
+        }
+        return basicImage;
     }
 
 }

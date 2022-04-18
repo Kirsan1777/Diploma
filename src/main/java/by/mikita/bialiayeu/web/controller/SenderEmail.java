@@ -4,9 +4,7 @@ package by.mikita.bialiayeu.web.controller;
 import by.mikita.bialiayeu.server.service.impl.EmailSendingServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 @RestController
@@ -14,11 +12,15 @@ import org.springframework.web.servlet.ModelAndView;
 @EnableAutoConfiguration
 public class SenderEmail {
 
+    private static final String MESSAGE_WITH_RESPONSE = "Congratulation you will accept on course";
+
     EmailSendingServiceImpl emailSendingService;
+    AdminController adminController;
 
     @Autowired
-    public SenderEmail(EmailSendingServiceImpl emailSendingService){
+    public SenderEmail(EmailSendingServiceImpl emailSendingService, AdminController adminController){
         this.emailSendingService = emailSendingService;
+        this.adminController = adminController;
     }
 
     @GetMapping("/home")
@@ -28,12 +30,10 @@ public class SenderEmail {
         return model;
     }
 
-    @GetMapping("/send-basic")
-    public ModelAndView sendMessage(){
+    @GetMapping("/send-response-to-person")
+    public ModelAndView sendMessage(@RequestParam("email") String email){
         ModelAndView model = new ModelAndView();
-        emailSendingService.sendMessage();
-        model.addObject("message", "message was send");
-        model.setViewName("sendEmail");
-        return model;
+        emailSendingService.sendMessage(MESSAGE_WITH_RESPONSE, email);
+        return adminController.claimPage();
     }
 }

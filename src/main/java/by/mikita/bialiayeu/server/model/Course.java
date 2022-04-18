@@ -30,6 +30,13 @@ public class Course {
     private String description;
     @Column(name = "photo_reference")
     private String photoReference;
-
+    @Column
+    private double cost;
+    @Column(name = "start_time")
+    private String startTime;
+    @Column(name = "continuance")
+    private String continuance;
+    private String text;
+    private int teacher;
 
 }
