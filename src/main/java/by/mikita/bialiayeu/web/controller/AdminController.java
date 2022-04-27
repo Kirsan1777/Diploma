@@ -59,8 +59,10 @@ public class AdminController {
     public ModelAndView coursePage(){
         ModelAndView model = new ModelAndView();
         List<Course> courses = courseService.findAllCourses();
+        List<Teacher> teachers = teacherService.findAllTeacher();
         model.setViewName("adminCourse");
         model.addObject("courses", courses);
+        model.addObject("teachers", teachers);
         return model;
     }
 
@@ -68,15 +70,18 @@ public class AdminController {
     public ModelAndView addNewCourseCommand(@RequestParam("name_course") String nameCourse,@RequestParam("description") String description,
                                             @RequestParam("type") String typeOfCourse,@RequestParam("cost") double cost,
                                             @RequestParam("start_time") String startTime,@RequestParam("schedule") String schedule,
-                                            @RequestParam("continuance") String continuance,@RequestParam("text") String text){
+                                            @RequestParam("continuance") String continuance,@RequestParam("text") String text,
+                                            @RequestParam("teacher") int teacher){
         Course course = new Course();
         course.setNameCourse(nameCourse);
         course.setDescription(description);
         course.setTypeOfCourse(typeOfCourse);
         course.setCost(cost);
         course.setStartTime(startTime);
+        course.setSchedule(schedule);
         course.setContinuance(continuance);
         course.setText(text);
+        course.setTeacher(teacher);
         courseService.addNewCourse(course);
         return coursePage();
     }

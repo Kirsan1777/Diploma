@@ -66,6 +66,15 @@
             </select>
         </div>
         <div class="mb-3">
+            <label for="teacher" class="form-label">Teacher</label>
+            <select name="teacher" class="admin-button-stupid" id="teacher" aria-label="Default select example"
+                    style="margin-top: 10px">
+                <c:forEach var="n" items="${teachers}">
+                    <option value="${n.id}"><c:out value="${n.secondName}"/> <c:out value="${n.firstName}"/></option>
+                </c:forEach>
+            </select>
+        </div>
+        <div class="mb-3">
             <label for="text" class="form-label">Text</label>
             <textarea class="form-control" name="text" id="text" rows="3"></textarea>
         </div>
@@ -89,7 +98,6 @@
         </thead>
         <tbody>
         <c:forEach var="n" items="${courses}">
-
             <tr style="vertical-align: middle">
                 <th scope="row">
                     <img src="/images/${n.photoReference}" alt="No  image" width="60" height="60"/>
@@ -108,5 +116,6 @@
         </tbody>
     </table>
 </div>
+
 </body>
 </html>

@@ -38,5 +38,5 @@ public class Course {
     private String continuance;
     private String text;
     private int teacher;
-
+    private String schedule;
 }

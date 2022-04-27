@@ -71,7 +71,7 @@ public class CourseServiceImpl /* implements BookService */{
     private String setBasicImage(String type){
         String basicImage = "";
         switch (type){
-            case "Java": basicImage = "19002.jpg";
+            case "Java": basicImage = "Icon.svg";
                 break;
             case "JavaScript": basicImage = "somber-cat-.jpg";
                 break;
