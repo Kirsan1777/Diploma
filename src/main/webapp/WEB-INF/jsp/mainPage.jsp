@@ -14,6 +14,8 @@
         <%@include file="/WEB-INF/css/header.css" %>
         <%@include file="/WEB-INF/css/mainPage.css" %>
         <%@include file="/WEB-INF/css/table.css" %>
+        <%@include file="/WEB-INF/css/tableTeachers.css" %>
+        <%@include file="/WEB-INF/css/tableBlogs.css" %>
     </style>
 </head>
 <body>
@@ -63,5 +65,32 @@
     <div class="string_06">Преподаватели</div>
     <a class="link_text_2" href="adminCourse.jsp">Смотреть всё</a>
 </div>
+<div class="card_container_teacher">
+    <c:forEach var="n" items="${teachers}">
+        <a class="card_link_teacher" href="#SUCK">
+            <div class="card_teacher">
+                <img src="/images/<c:out value="${n.photoReference}"/>" width="296px" height="296px">
+                <span class="card_name"><c:out value="${n.firstName}"/> <c:out value="${n.secondName}"/></span>
+                <span class="card_skill"><c:out value="${n.skill}"/></span>
+            </div>
+        </a>
+    </c:forEach>
+</div>
+<div style="margin-top: 80px">
+    <div class="string_06">Последнее из блога</div>
+    <a class="link_text_3" href="adminCourse.jsp">Смотреть всё</a>
+</div>
+<div class="card_container_blog">
+    <c:forEach var="n" items="${blogs}">
+        <a class="card_link_blog" href="#SUCK">
+            <div class="card_blog">
+                <img src="/images/trend.png" width="400" height="246"/>
+                <span class="card_skill"># <c:out value="${n.description}"/></span>
+                <span class="card_desc"><c:out value="${n.name}"/></span>
+            </div>
+        </a>
+    </c:forEach>
+</div>
+
 </body>
 </html>

@@ -1,0 +1,101 @@
+.text_filter {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 64px;
+    /* identical to box height, or 178% */
+    margin-left: 240px;
+    display: flex;
+    align-items: center;
+}
+
+.text_type_course {
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 64px;
+    margin-top: 20px;
+    margin-left: 137px;
+    color: #000000;
+}
+
+.box_column {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-right: 12px;
+}
+
+.admin-button-stupid {
+    display: block;
+
+    padding: 0.375rem 0.75rem;
+    height: 35px;
+    width: 255px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-clip: padding-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.24);
+    border-radius: 28px;
+}
+
+.admin-button-stupid:focus{
+    outline: none;
+    outline-offset: 5px;
+    box-shadow:0 0 10px #6ba1ff;
+}
+
+.searcher {
+    box-sizing: border-box;
+    padding-left: 15px;
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    width: 800px;
+    height: 35px;
+    font-style: italic;
+    background: #FFFFFF;
+    color: #6F6F6F;
+    border: 1px solid rgba(0, 0, 0, 0.24);
+    border-radius: 28px;
+}
+
+.searcher:focus {
+    border: 1px solid rgba(0, 0, 0, 0.24);
+    color: #000000;
+    font-style: italic;
+}
+
+.button_find {
+    margin-left: 12px;
+    padding: 0px 64px;
+
+    width: 220px;
+    height: 35px;
+    font-size: 20px;
+    background: #FFFFFF;
+    border: 1px solid #6C63FF;
+    color: #6C63FF;
+    border-radius: 28px;
+}
+
+.button_find:hover {
+    background: #6C63FF;
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+}
+
+.box_row {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+
+}

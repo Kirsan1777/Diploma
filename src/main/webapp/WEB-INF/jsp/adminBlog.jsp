@@ -39,10 +39,7 @@
                 <option value="Java">Java</option>
                 <option value="JavaScript">JavaScript</option>
                 <option value="QA">QA</option>
-                <option value="Design">Design</option>
                 <option value="Android">Android</option>
-                <option value="Future">Future</option>
-                <option value="Machine Learning">Machine Learning</option>
                 <option value="UX/UI">UX/UI</option>
             </select>
         </div>

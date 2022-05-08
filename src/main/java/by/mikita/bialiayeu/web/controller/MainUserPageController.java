@@ -49,4 +49,54 @@ public class MainUserPageController {
         return model;
     }
 
+    @GetMapping("/courses")
+    public ModelAndView coursesPage(){
+        ModelAndView model = new ModelAndView();
+        List<Course> coursesJava = courseService.findCourseByType("Java");
+        List<Course> coursesJS = courseService.findCourseByType("Java Script");
+        List<Course> coursesQA = courseService.findCourseByType("QA");
+        List<Course> coursesDesign = courseService.findCourseByType("Design");
+        List<Course> coursesAndroid = courseService.findCourseByType("Android");
+        model.addObject("coursesJava", coursesJava);
+        model.addObject("coursesJS", coursesJS);
+        model.addObject("coursesQA", coursesQA);
+        model.addObject("coursesDesign", coursesDesign);
+        model.addObject("coursesAndroid", coursesAndroid);
+        model.setViewName("courseMain");
+        return model;
+    }
+
+    @GetMapping("/test")
+    public ModelAndView testPage(){
+        ModelAndView model = new ModelAndView();
+        model.setViewName("mainTest");
+        return model;
+    }
+
+    @GetMapping("/teachers")
+    public ModelAndView teachersPage(){
+        ModelAndView model = new ModelAndView();
+        model.addObject("java", teacherService.findTeachersBySkill("Java"));
+        model.addObject("android", teacherService.findTeachersBySkill("Android"));
+        model.addObject("javaScript", teacherService.findTeachersBySkill("JavaScript"));
+        model.addObject("qa", teacherService.findTeachersBySkill("QA"));
+        model.addObject("design", teacherService.findTeachersBySkill("Design"));
+        model.setViewName("mainTeacher");
+        return model;
+    }
+
+    @GetMapping("/contacts")
+    public ModelAndView contactPage(){
+        ModelAndView model = new ModelAndView();
+        model.setViewName("contact");
+        return model;
+    }
+
+    @GetMapping("/blogs")
+    public ModelAndView blogsPage(){
+        ModelAndView model = new ModelAndView();
+        model.setViewName("mainBlogs");
+        return model;
+    }
+
 }

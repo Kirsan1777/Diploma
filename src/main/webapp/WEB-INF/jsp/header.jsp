@@ -15,13 +15,13 @@
 </head>
 <body>
 <div class="header">
-    <a href="#default" class="logo">IT-School</a>
+    <a href="/main/" class="logo">IT-School</a>
     <div class="header-right">
-        <a href="#home">Курсы</a>
-        <a href="#contact">Преподаватели</a>
-        <a href="#about">Блог</a>
-        <a href="#about">Тест</a>
-        <a href="#about">Контакты</a>
+        <a href="/main/courses">Курсы</a>
+        <a href="/main/teachers">Преподаватели</a>
+        <a href="/main/blogs">Блог</a>
+        <a href="/main/test">Тест</a>
+        <a href="/main/contacts">Контакты</a>
     </div>
 </div>
 </body>

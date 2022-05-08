@@ -1,26 +1,35 @@
 .card_container_teacher {
     display: flex;
-    justify-content: center;
     margin-top: 10px;
+    justify-content: left;
+    flex-wrap: wrap;
+    max-width: 1248px;
+}
+
+.text_filter {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 64px;
+    font-family: 'Gilroy', sans-serif;
+    /* identical to box height, or 178% */
+    margin-left: 135px;
+    display: flex;
+    align-items: center;
+}
+
+.card_center {
+margin-left: 135px;
 }
 
 .card_teacher {
     width: 296px;
     height: 392px;
     background: #FFFFFF;
-
-    display: flex;
-    flex-direction: column;
-}
-
-.card_container_teacher > .card_link_teacher:first-child, .card_container_teacher > .card_link_teacher:nth-child(2), .card_container_teacher > .card_link_teacher:nth-child(3) {
     margin-right: 16px;
-}
+    flex-direction: column;
+    display: flex;
 
-.card_link_teacher {
-    width: 296px;
-    height: 392px;
-    text-decoration: none;
 }
 
 .card_name {

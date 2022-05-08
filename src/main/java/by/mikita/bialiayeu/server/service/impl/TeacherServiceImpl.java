@@ -43,4 +43,8 @@ public class TeacherServiceImpl {
         return teacher;
     }
 
+    public List<Teacher> findTeachersBySkill(String skill){
+        return teacherDAO.findAllBySkill(skill);
+    }
+
 }

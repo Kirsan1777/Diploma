@@ -1,0 +1,61 @@
+.card {
+    width: 400px;
+    height: 216px;
+    background: #FFFFFF;
+    border: 2px solid #E7E7E7;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 16px;
+
+}
+
+.form_center {
+    display: flex;
+    justify-content: center;
+}
+
+.card_container {
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    max-width: 1248px;
+}
+
+.card_image {
+    margin-top: 24px;
+    margin-left: 32px;
+}
+
+.card_title {
+    font-family: 'Gilroy', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 40px;
+    color: #000000;
+    margin: 16px 0px 16px 32px;
+}
+
+.card_date {
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    /* identical to box height, or 133% */
+    color: #838383;
+    margin: 16px 0px 16px 32px;
+}
+
+.card_link {
+    width: 400px;
+    height: 216px;
+    text-decoration: none;
+    margin-right: 16px;
+    margin-bottom: 16px;
+}
+
+a.card_link:hover {
+    text-decoration: underline;
+}

@@ -40,6 +40,11 @@ public class CourseServiceImpl /* implements BookService */{
         return course;
     }
 
+    public List<Course> findCourseByType(String typeOfCourse){
+        List<Course> course = courseDAO.findAllByTypeOfCourse(typeOfCourse);
+        return course;
+    }
+
     public void addNewCourse(Course course){
         course.setPhotoReference(setBasicImage(course.getTypeOfCourse()));
         courseDAO.save(course);

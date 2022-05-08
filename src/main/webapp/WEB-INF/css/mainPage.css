@@ -300,3 +300,25 @@ a.link_text:hover {
 a.link_text_2:hover {
     text-decoration: underline;
 }
+
+.link_text_3 {
+    position: absolute;
+    width: 205px;
+    height: 64px;
+    left: 1127px;
+    top: 2415px;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 64px;
+
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+}
+
+a.link_text_3:hover {
+    text-decoration: underline;
+}
