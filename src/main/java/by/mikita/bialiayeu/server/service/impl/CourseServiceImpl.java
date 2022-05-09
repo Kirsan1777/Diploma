@@ -29,8 +29,8 @@ public class CourseServiceImpl /* implements BookService */{
         return courses;
     }
 
-    public List<Course> findCourseByName(String nameCourse){
-        List<Course> courses = courseDAO.findAllByNameCourse(nameCourse);
+    public List<Course> findAllCoursesByName(String nameCourse){
+        List<Course> courses = courseDAO.findAllByNameCourseContaining(nameCourse);
         return courses;
     }
 
@@ -71,6 +71,10 @@ public class CourseServiceImpl /* implements BookService */{
         Course course = courseOptional.map( c -> modelMapper.map(c, Course.class)).get();
         course.setPhotoReference(newPhoto);
         courseDAO.save(course);
+    }
+
+    public List<Course> findAllByFilter(String type, String continuance, double price){
+        return courseDAO.findAllByTypeOfCourseAndContinuanceAndCostIsLessThan(type, continuance, price);
     }
 
     private String setBasicImage(String type){

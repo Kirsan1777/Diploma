@@ -59,6 +59,7 @@
                 <option value="JavaScript Developer">JavaScript Developer</option>
                 <option value="QA">QA</option>
                 <option value="Design">Design</option>
+                <option value="Android">Android</option>
             </select>
             <input name="picture" type="hidden" id="costil" value="Save">
             <div style="margin-top: 15px">

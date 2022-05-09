@@ -22,16 +22,18 @@ public class AdminController {
     private TeacherServiceImpl teacherService;
     private CourseServiceImpl courseService;
     private BlogServiceImpl blogService;
+    private MainUserPageController mainUserPageController;
 
     @Autowired
     public AdminController(AuthorizationServiceImpl authorizationService, ClaimServiceImpl claimService,
                            TeacherServiceImpl teacherService, CourseServiceImpl courseService,
-                           BlogServiceImpl blogService){
+                           BlogServiceImpl blogService, MainUserPageController mainUserPageController){
         this.authorizationService = authorizationService;
         this.claimService = claimService;
         this.teacherService =teacherService;
         this.courseService = courseService;
         this.blogService = blogService;
+        this.mainUserPageController = mainUserPageController;
     }
 
     @GetMapping("/")
@@ -64,6 +66,20 @@ public class AdminController {
         model.addObject("courses", courses);
         model.addObject("teachers", teachers);
         return model;
+    }
+
+    @PostMapping("/claim/addNew")
+    public ModelAndView addNewClaimCommand(@RequestParam("name") String name,
+                                           @RequestParam("email") String email,
+                                            @RequestParam("phone") String phone,
+                                           @RequestParam("id") int id){
+        Claim claim = new Claim();
+        claim.setName(name);
+        claim.setEmail(email);
+        claim.setPhoneNumber(phone);
+        claim.setIdCourse(id);
+        claimService.addUserInfo(claim);
+        return mainUserPageController.coursesByIdPage(Integer.toString(id));
     }
 
     @PostMapping("/course/addNew")

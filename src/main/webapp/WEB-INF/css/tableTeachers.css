@@ -13,7 +13,7 @@
     flex-direction: column;
 }
 
-.card_container_teacher > .card_link_teacher:first-child, .card_container_teacher > .card_link_teacher:nth-child(2), .card_container_teacher > .card_link_teacher:nth-child(3) {
+.card_container_teacher > .card_teacher:first-child, .card_container_teacher > .card_teacher:nth-child(2), .card_container_teacher > .card_teacher:nth-child(3) {
     margin-right: 16px;
 }
 

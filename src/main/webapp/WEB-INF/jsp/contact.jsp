@@ -27,4 +27,5 @@
         referrerpolicy="no-referrer-when-downgrade"></iframe>
 
 </body>
+<jsp:include page="footer.jsp"/>
 </html>

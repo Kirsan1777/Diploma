@@ -12,6 +12,9 @@ import java.util.List;
 public interface CourseDAO extends JpaRepository<Course, Integer>, JpaSpecificationExecutor<Course> {
 
     List<Course> findAllByNameCourse(@Param("name_course") String nameCourse);
+    List<Course> findAllByNameCourseContaining(@Param("name_course") String nameCourse);
     List<Course> findAllByTypeOfCourse(@Param("type_of_course") String nameCourse);
+    List<Course> findAllByTypeOfCourseAndContinuanceAndCostIsLessThan(@Param("type_of_course") String typeOfCourse, @Param("continuance") String continuance, @Param("cost") double cost);
+
 
 }

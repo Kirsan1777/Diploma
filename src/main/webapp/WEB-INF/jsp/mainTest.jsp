@@ -153,5 +153,6 @@
     </div>
 </div>
 <input name="save" type="submit" class="button_find" value="Завершить тест">
+<jsp:include page="footer.jsp"/>
 </body>
 </html>

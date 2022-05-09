@@ -1,0 +1,27 @@
+.bg-image_1 {
+    background-image: url(/images/Frame_40.jpg);
+    height: 550px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.bg-image_2 {
+    background-image: url(/images/Frame_41.jpg);
+    height: 550px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.bg-image_3 {
+    background-image: url(/images/Frame_42.jpg);
+    height: 550px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.bg-image_4 {
+    background-image: url(/images/Frame_43.jpg);
+    height: 550px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}

@@ -1,19 +1,24 @@
+.button_row {
+
+}
+
 .card_blog {
     width: 400px;
     height: 320px;
     background: #FFFFFF;
     display: flex;
     flex-direction: column;
-}
-
-.card_container_blog > .card_link_blog:first-child, .card_container_blog > .card_link_blog:nth-child(2){
+    margin-top: 16px;
     margin-right: 16px;
 }
 
 .card_container_blog {
     display: flex;
-    justify-content: center;
-    margin-top: 50px;
+    margin-top: 15px;
+    margin-left: 150px;
+    justify-content: left;
+    flex-wrap: wrap;
+    max-width: 1248px;
 }
 
 .card_skill {
@@ -49,8 +54,29 @@
     width: 400px;
     height: 320px;
     text-decoration: none;
+    margin-right: 16px;
+    margin-bottom: 50px;
 }
 
 a.card_link_blog:hover {
     text-decoration: underline;
+}
+
+.button_find {
+    margin-left: 12px;
+    padding: 0px 64px;
+
+    width: 220px;
+    height: 35px;
+    font-size: 20px;
+    background: #FFFFFF;
+    border: 1px solid #6C63FF;
+    color: #6C63FF;
+    border-radius: 28px;
+}
+
+.button_find:hover {
+    background: #6C63FF;
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
 }

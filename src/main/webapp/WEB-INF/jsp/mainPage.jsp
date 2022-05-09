@@ -47,12 +47,13 @@
     реальный проект - твой первый проект в
     профессиональном портфолио.
 </div>
+
 <div class="string_05">Ближайшие курсы</div>
-<a class="link_text" href="adminCourse.jsp">Смотреть всё</a>
+<a class="link_text" href="/main/courses">Смотреть всё</a>
 
 <div class="card_container">
     <c:forEach var="n" items="${courses}">
-        <a class="card_link" href="#SUCK">
+        <a class="card_link" href="/main/courses/${n.id}">
             <div class="card">
                 <img class="card_image" src="/images/<c:out value="${n.photoReference}"/>" width="56" height="56"/>
                 <span class="card_title"><c:out value="${n.nameCourse}"/></span>
@@ -61,24 +62,23 @@
         </a>
     </c:forEach>
 </div>
+
 <div style="margin-top: 50px">
     <div class="string_06">Преподаватели</div>
-    <a class="link_text_2" href="adminCourse.jsp">Смотреть всё</a>
+    <a class="link_text_2" href="/main/teachers">Смотреть всё</a>
 </div>
 <div class="card_container_teacher">
     <c:forEach var="n" items="${teachers}">
-        <a class="card_link_teacher" href="#SUCK">
             <div class="card_teacher">
                 <img src="/images/<c:out value="${n.photoReference}"/>" width="296px" height="296px">
                 <span class="card_name"><c:out value="${n.firstName}"/> <c:out value="${n.secondName}"/></span>
                 <span class="card_skill"><c:out value="${n.skill}"/></span>
             </div>
-        </a>
     </c:forEach>
 </div>
 <div style="margin-top: 80px">
     <div class="string_06">Последнее из блога</div>
-    <a class="link_text_3" href="adminCourse.jsp">Смотреть всё</a>
+    <a class="link_text_3" href="/main/blogs">Смотреть всё</a>
 </div>
 <div class="card_container_blog">
     <c:forEach var="n" items="${blogs}">
@@ -91,6 +91,6 @@
         </a>
     </c:forEach>
 </div>
-
+<jsp:include page="footer.jsp"/>
 </body>
 </html>

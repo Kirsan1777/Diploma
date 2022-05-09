@@ -1,0 +1,9 @@
+.box_column_2 {
+    width: 10%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    font-size: 26px;
+    line-height: 40px;
+    margin: auto;
+}

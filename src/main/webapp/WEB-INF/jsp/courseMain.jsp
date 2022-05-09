@@ -18,17 +18,20 @@
 </head>
 <body>
 <jsp:include page="header.jsp"/>
-<div class="box_row" style="margin-top: 40px">
-    <input type="text" class="searcher" placeholder="    Поиск"/>
-    <input name="save" type="submit" class="button_find" value="Искать">
-</div>
+<form method="get" action="/main/course/find">
+    <div class="box_row" style="margin-top: 40px">
+        <input type="text" class="searcher" name="name" placeholder="   Поиск"/>
+        <input name="save" type="submit" class="button_find" value="Искать">
+    </div>
+</form>
+
 
 <span class="text_filter" style="margin-top: 15px">Фильтры</span>
-
-<div class="box_row">
+<form method="get" action="/main/course/filter">
+    <div class="box_row">
     <div class="box_column">
         <span>Направление</span>
-        <select name="continuance" class="admin-button-stupid" id="type_of_course" aria-label="Default select example"
+        <select name="type" class="admin-button-stupid" id="type_of_course" aria-label="Default select example"
                 style="margin-top: 10px">
             <option value="Java">Java</option>
             <option value="Java Script">Java Script</option>
@@ -41,16 +44,16 @@
         <span>Длительность</span>
         <select name="continuance" class="admin-button-stupid" id="continuance" aria-label="Default select example"
                 style="margin-top: 10px">
-            <option value="1 month">1 месяц</option>
-            <option value="2 month">2 месяца</option>
-            <option value="3 month">3 месяца</option>
-            <option value="6 month">6 месяцев</option>
-            <option value="1 year">1 год</option>
+            <option value="1 месяц">1 месяц</option>
+            <option value="2 месяца">2 месяца</option>
+            <option value="3 месяцаh">3 месяца</option>
+            <option value="6 месяцев">6 месяцев</option>
+            <option value="1 год">1 год</option>
         </select>
     </div>
     <div class="box_column">
         <span>Стоимость</span>
-        <select name="continuance" class="admin-button-stupid" id="price" aria-label="Default select example"
+        <select name="price" class="admin-button-stupid" id="price" aria-label="Default select example"
                 style="margin-top: 10px">
             <option value="500">Меньше 500р</option>
             <option value="1000">Меньше 1000р</option>
@@ -61,8 +64,9 @@
     <div style="margin-top: 27px">
         <input name="save" type="submit" class="button_find" value="Применить">
     </div>
-
 </div>
+</form>
+<c:if test="${!empty coursesJava}">
 <div style="margin-top: 40px">
     <span class="text_type_course" >Java</span>
 </div>
@@ -70,7 +74,7 @@
 <div class="form_center" style="margin-top: 25px">
     <div class="card_container">
         <c:forEach var="n" items="${coursesJava}">
-            <a class="card_link" href="#SUCK">
+            <a class="card_link" href="/main/courses/${n.id}">
                 <div class="card">
                     <img class="card_image" src="/images/<c:out value="${n.photoReference}"/>" width="56" height="56"/>
                     <span class="card_title"><c:out value="${n.nameCourse}"/></span>
@@ -80,13 +84,15 @@
         </c:forEach>
     </div>
 </div>
+</c:if>
+<c:if test="${!empty coursesJS}">
 <div style="margin-top: 40px">
-<span class="text_type_course">Java Script</span>
+<span class="text_type_course">JavaScript</span>
 </div>
 <div class="form_center" style="margin-top: 25px">
     <div class="card_container">
         <c:forEach var="n" items="${coursesJS}">
-            <a class="card_link" href="#SUCK">
+            <a class="card_link" href="/main/courses/${n.id}">
                 <div class="card">
                     <img class="card_image" src="/images/<c:out value="${n.photoReference}"/>" width="56" height="56"/>
                     <span class="card_title"><c:out value="${n.nameCourse}"/></span>
@@ -96,13 +102,15 @@
         </c:forEach>
     </div>
 </div>
+</c:if>
+<c:if test="${!empty coursesQA}">
 <div style="margin-top: 40px">
 <span class="text_type_course">QA</span>
 </div>
 <div class="form_center" style="margin-top: 25px">
     <div class="card_container">
         <c:forEach var="n" items="${coursesQA}">
-            <a class="card_link" href="#SUCK">
+            <a class="card_link" href="/main/courses/${n.id}">
                 <div class="card">
                     <img class="card_image" src="/images/<c:out value="${n.photoReference}"/>" width="56" height="56"/>
                     <span class="card_title"><c:out value="${n.nameCourse}"/></span>
@@ -112,13 +120,15 @@
         </c:forEach>
     </div>
 </div>
+</c:if>
+<c:if test="${!empty coursesDesign}">
 <div style="margin-top: 40px">
 <span class="text_type_course">Design</span>
 </div>
 <div class="form_center" style="margin-top: 25px">
     <div class="card_container">
         <c:forEach var="n" items="${coursesDesign}">
-            <a class="card_link" href="#SUCK">
+            <a class="card_link" href="/main/courses/${n.id}">
                 <div class="card">
                     <img class="card_image" src="/images/<c:out value="${n.photoReference}"/>" width="56" height="56"/>
                     <span class="card_title"><c:out value="${n.nameCourse}"/></span>
@@ -128,13 +138,15 @@
         </c:forEach>
     </div>
 </div>
+</c:if>
+<c:if test="${!empty coursesAndroid}">
 <div style="margin-top: 40px">
 <span class="text_type_course">Android</span>
 </div>
 <div class="form_center" style="margin-top: 25px">
     <div class="card_container">
         <c:forEach var="n" items="${coursesAndroid}">
-            <a class="card_link" href="#SUCK">
+            <a class="card_link" href="/main/courses/${n.id}">
                 <div class="card">
                     <img class="card_image" src="/images/<c:out value="${n.photoReference}"/>" width="56" height="56"/>
                     <span class="card_title"><c:out value="${n.nameCourse}"/></span>
@@ -144,6 +156,30 @@
         </c:forEach>
     </div>
 </div>
-
+</c:if>
+<c:if test="${message == 'nothing find'}">
+    <div style="margin-top: 40px">
+        <span class="text_filter">По вашему запросу ничего не найдено</span>
+    </div>
+</c:if>
+<c:if test="${!empty coursesFind}">
+    <div style="margin-top: 40px">
+        <span class="text_filter">Результаты поиска:</span>
+    </div>
+    <div class="form_center" style="margin-top: 25px">
+        <div class="card_container">
+            <c:forEach var="n" items="${coursesFind}">
+                <a class="card_link" href="/main/courses/${n.id}">
+                    <div class="card">
+                        <img class="card_image" src="/images/<c:out value="${n.photoReference}"/>" width="56" height="56"/>
+                        <span class="card_title"><c:out value="${n.nameCourse}"/></span>
+                        <span class="card_date"><c:out value="${n.startTime}"/></span>
+                    </div>
+                </a>
+            </c:forEach>
+        </div>
+    </div>
+</c:if>
+<jsp:include page="footer.jsp"/>
 </body>
 </html>

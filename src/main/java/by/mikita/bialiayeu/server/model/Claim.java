@@ -22,5 +22,5 @@ public class Claim {
     @Column(name = "phone_number")
     private String phoneNumber;
     @Column(name = "id_course")
-    private String idCourse;
+    private int idCourse;
 }

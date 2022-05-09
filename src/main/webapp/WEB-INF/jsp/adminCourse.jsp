@@ -58,11 +58,11 @@
             <label for="continuance" class="form-label">Continuance</label>
             <select name="continuance" class="admin-button-stupid" id="continuance" aria-label="Default select example"
                     style="margin-top: 10px">
-                <option value="1 month">1 month</option>
-                <option value="2 month">2 month</option>
-                <option value="3 month">3 month</option>
-                <option value="6 month">6 month</option>
-                <option value="1 year">1 year</option>
+                <option value="1 месяц">1 month</option>
+                <option value="2 месяца">2 month</option>
+                <option value="3 месяца">3 month</option>
+                <option value="6 месяцев">6 month</option>
+                <option value="1 год">1 year</option>
             </select>
         </div>
         <div class="mb-3">

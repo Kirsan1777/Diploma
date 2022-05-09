@@ -1,0 +1,62 @@
+.box_column {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-right: 12px;
+}
+
+.span_margin {
+    margin-left: 135px;
+    font-size: 18px;
+}
+
+.bg-image {
+    background-image: url(/images/footstep.jpg);
+    height: 350px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.button_buttons {
+    margin-top: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button_send {
+    box-sizing: border-box;
+    padding-left: 15px;
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    width: 250px;
+    height: 35px;
+    background: black;
+    color: white;
+    border-radius: 28px;
+}
+
+.button_send:hover {
+    cursor: pointer;
+    background-color: #393939;
+}
+
+.button_search_post {
+    box-sizing: border-box;
+    padding-left: 15px;
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    width: 250px;
+    height: 35px;
+    font-style: italic;
+    background: #FFFFFF;
+    color: #6F6F6F;
+    border: 1px solid rgba(0, 0, 0, 0.24);
+    border-radius: 28px;
+}
+
+.button_send {
+
+}

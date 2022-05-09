@@ -6,6 +6,8 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,6 +24,7 @@ public class ClaimServiceImpl {
     }
 
     public void addUserInfo(Claim claim){
+        claim.setDateRegistration(LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE));
         claimDAO.save(claim);
     }
 
