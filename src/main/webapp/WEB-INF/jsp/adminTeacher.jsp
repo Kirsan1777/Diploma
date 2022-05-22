@@ -26,7 +26,7 @@
 <div class="picture-form">
     <form action="/imagesUpload" enctype="multipart/form-data" method="post">
         <div class="add-picture" style="margin-top: 18px">
-            <img id="picture" src="/images/19002.jpg" width="150" height="210" alt="No image"/>
+            <img id="picture" src="/images/Photo (5).jpg" width="150" height="210" alt="No image"/>
             <label class="input" style="margin-bottom: 0px">
                 <input id="photo" style="display: none; width: 150px" class="input" type="file"
                        name="picture"

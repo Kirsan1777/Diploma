@@ -82,7 +82,7 @@
 </div>
 <div class="card_container_blog">
     <c:forEach var="n" items="${blogs}">
-        <a class="card_link_blog" href="#SUCK">
+        <a class="card_link_blog" href="/main/blog/${n.id}">
             <div class="card_blog">
                 <img src="/images/trend.png" width="400" height="246"/>
                 <span class="card_skill"># <c:out value="${n.description}"/></span>

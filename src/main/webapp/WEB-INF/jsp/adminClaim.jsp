@@ -23,7 +23,7 @@
     <table class="table">
         <thead class="table-light">
         <tr>
-            <th scope="col">#</th>
+            <th scope="col">Course</th>
             <th scope="col">Name</th>
             <th scope="col">Email</th>
             <th scope="col">Phone number</th>
@@ -35,7 +35,13 @@
         <c:forEach var="n" items="${claims}">
 
             <tr style="vertical-align: middle">
-                <th scope="row">1</th>
+                <th scope="row">
+                    <c:forEach var="k" items="${courses}">
+                        <c:if test="${k.id == n.idCourse}">
+                            <c:out value="${k.nameCourse}"/>
+                        </c:if>
+                    </c:forEach>
+                </th>
                 <td><c:out value="${n.name}"/></td>
                 <td><c:out value="${n.email}"/></td>
                 <td>+<c:out value="${n.phoneNumber}"/></td>

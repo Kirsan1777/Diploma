@@ -26,7 +26,7 @@
             <input type="text" class="form-control" id="nameBlog" required="Please input value" name="name_blog" placeholder="Design in future">
         </div>
         <div class="add-picture" style="margin-top: 18px">
-            <img id="picture" src="/images/19002.jpg" width="400" height="210" alt="No image"/>
+            <img id="picture" src="/images/Blog.jpg" width="400" height="210" alt="No image"/>
             <label class="input" style="margin-bottom: 0px" >
                 <input id="photo" style="display: none; width: 150px" class="input" type="file"  name="picture" accept="image/*"/>
                 Add

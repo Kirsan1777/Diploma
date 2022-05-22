@@ -16,7 +16,7 @@
 </head>
 <body>
 <jsp:include page="header.jsp"/>
-<img src="/images/PictureAnya4.png" width="1518" height="609"/>
+<img src="/images/Blog.jpg" width="1518" height="609"/>
 <div style="margin-top: 20px; display: flex; justify-content: center">
     <form method="get" action="/main/blogs">
         <button type="submit" class="button_find">Java</button>
@@ -38,7 +38,7 @@
     <c:forEach var="n" items="${blogs}">
         <a class="card_link_blog" href="/main/blog/${n.id}">
             <div class="card_blog">
-                <img src="/images/trend.png" width="400" height="246"/>
+                <img src="/images/${pictureName}" width="400" height="246"/>
                 <span class="card_skill"># <c:out value="${n.description}"/></span>
                 <span class="card_desc"><c:out value="${n.name}"/></span>
             </div>
